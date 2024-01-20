@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resource :tweets, only: [:create]
+
+  get :dashboard, to: 'dashboard#index'
 end
