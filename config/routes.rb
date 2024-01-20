@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resource :tweets, only: [:create]
 
   get :dashboard, to: 'dashboard#index'
+
+  resource :username, only: [:new, :update]
 end
