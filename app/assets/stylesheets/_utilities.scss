@@ -1,14 +1,13 @@
-.btn-twitter {
-  background-color: $twitter-blue;
-  color: white;
+a.twitter-link {
+  color: $twitter-blue !important;
   -moz-transition: all 0.1s ease-in-out;
   -o-transition: all 0.1s ease-in-out;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  font-weight: 600;
+
   &:hover {
-    background-color: darken($twitter-blue, 10%);
-    color: white;
+    color: darken($twitter-blue, 10%) !important;
+    text-decoration: underline !important;
   }
 }
 
