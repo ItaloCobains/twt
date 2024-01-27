@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
-
   <body>
     <% if flash.any? %>
-    <%= render "shared/flashes" %>
+      <%= render "shared/flashes" %>
     <% end %>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && request.path != new_username_path %>
       <div class="container py-2">
         <div class="row">
           <%= render "shared/sidebar" %>
