@@ -1,57 +1,54 @@
 <aside class="col side-navbar">
-      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3 px-3", id: "twitter-logo-link" do %>
-        <%= image_tag "logo.png", width: "32" %>
-      <% end %>
-      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
-        <div class="px-3 py-2 rounded-pill">
-          <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "home.png", width: "32" %></span>
-          Home
-        </div>
-      <% end %>
-      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
-        <div class="px-3 py-2 rounded-pill">
-          <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "internet-explorer.png", width: "32" %></span>
-          Explorer
-        </div>
-      <% end %>
-      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
-        <div class="px-3 py-2 rounded-pill">
-          <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "packard-bell.png", width: "32" %></span>
-          Notification
-        </div>
-      <% end %>
-      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
-        <div class="px-3 py-2 rounded-pill">
-          <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "text-message.png", width: "32" %></span>
-          Message
-        </div>
-      <% end %>
-      <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
-        <div class="px-3 py-2 rounded-pill">
-          <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "user-interface.png", width: "32" %></span>
-          Profile
-        </div>
-      <% end %>
-
-      <div class="d-flex align-items-center fs-4 px-4 mb-4">
-        <%= button_tag "Tweet", class: "btn rounded-pill btn-twitter w-100 btn-lg", data: { "bs-toggle": "modal", "bs-target": "#exampleModal" } %>
-      </div> 
-
-      <div class="d-flex align-items-center fs-6 px-4 mb-4">
-        <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: 'twitter-link' %>
-      </div> 
-    </aside>
-
+  <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3 px-3", id: "twitter-logo-link" do %>
+    <%= image_tag "logo.png", width: "32" %>
+  <% end %>
+  <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
+    <div class="px-3 py-2 rounded-pill">
+      <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "home.png", width: "32" %></span>
+      Home
+    </div>
+  <% end %>
+  <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
+    <div class="px-3 py-2 rounded-pill">
+      <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "internet-explorer.png", width: "32" %></span>
+      Explorer
+    </div>
+  <% end %>
+  <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
+    <div class="px-3 py-2 rounded-pill">
+      <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "packard-bell.png", width: "32" %></span>
+      Notification
+    </div>
+  <% end %>
+  <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
+    <div class="px-3 py-2 rounded-pill">
+      <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "text-message.png", width: "32" %></span>
+      Message
+    </div>
+  <% end %>
+  <%= link_to root_path, class: "d-flex align-items-center fs-5 mb-3" do %>
+    <div class="px-3 py-2 rounded-pill">
+      <span class="me-4 position-relative" style="bottom: 3px;"><%= image_tag "user-interface.png", width: "32" %></span>
+      Profile
+    </div>
+  <% end %>
+  <div class="d-flex align-items-center fs-4 px-4 mb-4">
+    <%= button_tag "Tweet", class: "btn rounded-pill btn-twitter w-100 btn-lg", data: { "bs-toggle": "modal", "bs-target": "#exampleModal" } %>
+  </div>
+  <div class="d-flex align-items-center fs-6 px-4 mb-4">
+    <%= link_to "Sign out", destroy_user_session_path, data: { "turbo-method": :delete }, class: 'twitter-link' %>
+  </div>
+</aside>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header border-bottom-0">
-        <button type="button" class="btn-close mx-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close mx-0" data-bs-dismiss="modal" aria-label="Close" id="close-modal-btn"></button>
       </div>
       <div class="modal-body">
         <%= render "shared/tweet_form" %>
       </div>
-   </div>
+    </div>
   </div>
 </div>
