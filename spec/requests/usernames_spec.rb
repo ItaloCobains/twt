@@ -15,8 +15,9 @@ RSpec.describe 'Usernames', type: :request do
     context 'valid params' do
       it 'updates the username' do
         expect do
-          put username_path, params: { user: { username: 'new_username' } }
-        end.to change { user.reload.username }.to('new_username')
+          put username_path, params: { user: { username: 'foobar', display_name: 'Foobar' } }
+        end.to change { user.reload.username }.to('foobar')
+        expect(user.display_name).to eq('Foobar')
         expect(response).to redirect_to dashboard_path
       end
     end
@@ -25,7 +26,7 @@ RSpec.describe 'Usernames', type: :request do
       it 'updates the username' do
         expect do
           put username_path, params: { user: { username: '' } }
-        end.not_to change { user.reload.username }
+        end.not_to(change { user.reload.username })
         expect(response).to redirect_to new_username_path
       end
     end
