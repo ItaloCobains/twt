@@ -8,6 +8,8 @@ hash_git.txt
 # Ignore bundler config.
 /.bundle
 
+data
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
