@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get :dashboard, to: 'dashboard#index'
 
   resource :username, only: [:new, :update]
+
+  resource :likes, only: [:create, :destroy]
 end
